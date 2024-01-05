@@ -14,26 +14,35 @@ import java.util.stream.Collectors;
  */
 public class Main {
     public static void main(String[] args) {
-        List<Person> personList = Storage.getPersonList();
+        List<Person> personList = Storage.getPersons();
 
-        List<Person> sortedPersonList = personList.stream()
+
+        List<Person> collect = personList.stream()
+                .filter(person -> person.getAge() > 30)
                 .sorted()
                 .collect(Collectors.toList());
-        sortedPersonList.forEach(System.out::println);
+        collect.forEach(System.out::println);
 
-        System.out.println();
 
-        Optional<Person> first = sortedPersonList.stream().
-                filter(person -> person.getAge() > 30)
-                .findFirst();
 
-        first.ifPresent(System.out::println);
-
-        long count = sortedPersonList.stream()
-                .filter(person -> person.getAge() > 40)
-                .count();
-
-        System.out.println(count);
+//        List<Person> sortedPersonList = personList.stream()
+//                .sorted()
+//                .collect(Collectors.toList());
+//        sortedPersonList.forEach(System.out::println);
+//
+//        System.out.println();
+//
+//        Optional<Person> first = sortedPersonList.stream().
+//                filter(person -> person.getAge() > 30)
+//                .findFirst();
+//
+//        first.ifPresent(System.out::println);
+//
+//        long count = sortedPersonList.stream()
+//                .filter(person -> person.getAge() > 40)
+//                .count();
+//
+//        System.out.println(count);
 
 
 //        List<Person> newPersonList = sortedPersonList.stream()

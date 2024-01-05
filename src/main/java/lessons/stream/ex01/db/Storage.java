@@ -10,7 +10,7 @@ import java.util.List;
  * @author Serhii Klunniy
  */
 public class Storage {
-    private static List<Person> personList = new ArrayList<>();
+    private static final List<Person> persons = new ArrayList<>();
 
     static {
         Person person1 = new Person("Иван", "Иванов", 33);
@@ -24,19 +24,19 @@ public class Storage {
         Person person9 = new Person("Владимир", "Маяковский", 23);
         Person person10 = new Person("Михаил", "лермонтов", 26);
 
-        personList.add(person1);
-        personList.add(person2);
-        personList.add(person3);
-        personList.add(person4);
-        personList.add(person5);
-        personList.add(person6);
-        personList.add(person7);
-        personList.add(person8);
-        personList.add(person9);
-        personList.add(person10);
+        persons.add(person1);
+        persons.add(person2);
+        persons.add(person3);
+        persons.add(person4);
+        persons.add(person5);
+        persons.add(person6);
+        persons.add(person7);
+        persons.add(person8);
+        persons.add(person9);
+        persons.add(person10);
     }
 
-    public static List<Person> getPersonList() {
-        return personList;
+    public static List<Person> getPersons() {
+        return persons;
     }
 }
